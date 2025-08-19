@@ -1,0 +1,84 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# ==== Compact bad User-Agent blocker ====
+RewriteCond %{HTTP_USER_AGENT} "(?:^$|[Ww]eb[Bb]andit|Acunetix|binlar|OAI-SearchBot|ChatGPT-User|GPTBot|facebookexternalhit|BlackWidow|ByteDanceSpider|Bolt 0|BOT for JCE|Bot mailto:craftbot@yahoo\.com|casper|checkprivacy|ChinaClaw|clshttp|cmsworldmap|comodo|Custo|Default Browser 0|diavol|DIIbot|DISCo|dotbot|Download Demon|eCatch|EirGrabber|EmailCollector|EmailSiphon|EmailWolf|Express WebPictures|extract|ExtractorPro|EyeNetIE|feedfinder|FHscan|FlashGet|flicky|FunWebProducts|g00g1e|GetRight|GetWeb!|Go-Ahead-Got-It|Go!Zilla|grab|GrabNet|Grafula|harvest|HMView|ia_archiver|Image Stripper|Image Sucker|InterGET|Internet Ninja|InternetSeer\.com|jakarta|Java|JetCar|JOC Web Spider|kanagawa|kmccrew|larbin|LeechFTP|libwww|Mass Downloader|Maxthon$|microsoft\.url|MIDown tool|miner|Mister PiX|Mozilla.*Indy|Mozilla.*NEWT|MSFrontPage|Navroad|NearSite|Net Vampire|NetAnts|NetSpider|NetZIP|nutch|Octopus|Offline Explorer|Offline Navigator|PageGrabber|Papa Foto|pavuk|pcBrowser|PeoplePal|planetwork|psbot|purebot|pycurl|RealDownload|ReGet|Rippers 0|SeaMonkey$|sitecheck\.internetseer\.com|SiteSnagger|skygrid|SmartDownload|sucker|SuperBot|SuperHTTP|Surfbot|tAkeOut|Teleport Pro|Toata dragostea mea pentru diavola|turnit|vikspider|VoidEYE|Web Image Collector|Web Sucker|WebAuto|WebCopier|WebFetch|WebGo IS|WebLeacher|WebReaper|WebSauger|Website eXtractor|Website Quester|WebStripper|WebWhacker|WebZIP|Wget|Widow|WPScan|WWW-Mechanize|WWWOFFLE|Xaldon WebSpider|Yandex|Zeus|zmeu|360Spider|AhrefsBot|CazoodleBot|discobot|EasouSpider|ecxi|GT::WWW|heritrix|HTTP::Lite|HTTrack|id-search|id-search\.org|IDBot|Indy Library|IRLbot|ISC Systems iRc Search 2\.1|LinksCrawler|LinksManager\.com_bot|linkwalker|lwp-trivial|MFC_Tear_Sample|Microsoft URL Control|Missigua Locator|MJ12bot|panscient\.com|PECL::HTTP|PHPCrawl|PleaseCrawl|SBIder|SearchmetricsBot|Snoopy|Sogou|Steeler|URI::Fetch|urllib|webalta|WebCollage|Wells Search II|WEP Search|XoviBot|YisouSpider|zermelo|ZyBorg)" [NC]
+RewriteRule ^ - [F,L]
+
+# ==== Compact bad Referrer blocker ====
+RewriteCond %{HTTP_REFERER} "(?:free-social-buttions\.com|best-seo-offer\.com|buttons-for-your-website\.com|www[1-3]\.free-social-buttons\.com|100dollars-seo\.com\.com|www4\.free-social-buttons\.com)" [NC]
+RewriteRule ^ - [F,L]
+
+# =========================
+# Start Custom Blocks (IP/Subnet)
+# =========================
+
+# Aboundex
+Deny from 173.192.34.95
+# Bluecoat
+deny from 8.21.4.254
+deny from 65.46.48.192/30
+deny from 65.160.238.176/28
+deny from 85.92.222.0/24
+deny from 206.51.36.0/22
+deny from 216.52.23.0/24
+# cyveillance
+deny from 38.100.19.8/29
+deny from 38.100.21.0/24
+deny from 38.100.41.64/26
+deny from 38.105.71.0/25
+deny from 38.105.83.0/27
+deny from 38.112.21.140/30
+deny from 38.118.42.32/29
+deny from 65.213.208.128/27
+deny from 65.222.176.96/27
+deny from 65.222.185.72/29
+# Cyberpatrol
+deny from 38.103.17.160/27
+# Internet Identity - Anti-Phishing
+deny from 66.113.96.0/20
+deny from 70.35.113.192/27
+# Ironport
+deny from 204.15.80.0/22
+# Lightspeed Systems Security
+deny from 66.17.15.128/26
+deny from 69.84.207.32/27
+deny from 69.84.207.128/25
+# Layered Technologies
+deny from 72.36.128.0/17
+deny from 72.232.0.0/16
+deny from 72.233.0.0/17
+deny from 216.32.0.0/14
+# M86
+deny from 67.192.231.224/29
+deny from 208.90.236.0/22
+# Phish-Inspector.com
+deny from 209.147.127.208/28
+# Prescient Software, Inc. Phishmongers
+deny from 198.186.190.0/23
+deny from 198.186.192.0/23
+deny from 198.186.194.0/24
+# urlfilterdb
+deny from 207.210.99.32/29
+# websense-in.car1.sandiego1.level3.net
+deny from 4.53.120.22
+# Websense
+deny from 66.194.6.0/24
+deny from 67.117.201.128/28
+deny from 69.67.32.0/20
+deny from 131.191.87.0/24
+deny from 204.15.64.0/21
+deny from 208.80.192.0/21
+deny from 212.62.26.64/27
+deny from 213.168.226.0/24
+deny from 213.168.241.0/30
+deny from 213.168.242.0/30
+deny from 213.236.150.16/28
+
+# =========================
+# End Custom Blocks
+# =========================
+
+# =========================
+# End 	THANHTHAI.ORG
+# =========================
